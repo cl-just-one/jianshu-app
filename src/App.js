@@ -5,6 +5,7 @@ import Header from './common/header';
 import store from './store/index';
 import Home from './pages/home';
 import Detail from './pages/detail';
+import Login from './pages/login';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Route path="/" exact component={Home}/>
+          <Route path="/login" exact component={Login}/>
           <Route path="/detail/:id" exact component={Detail}/>
         </BrowserRouter>
       </Provider>
