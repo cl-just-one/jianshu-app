@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import {
   HomeWrapper,
@@ -13,7 +13,7 @@ import Recommend from "./components/Recommend";
 import Writter from "./components/Writter";
 import * as actionCreators from './store/actionCreators';
 
-class Home extends Component {
+class Home extends PureComponent {
   handleScrollTop() {
     window.scrollTo(0, 0);
   }
@@ -55,7 +55,6 @@ const mapDispatch = (dispatch) => ({
     dispatch(actionCreators.getHomeInfo());
   },
   changeScrollTopShow() {
-    console.log(document.documentElement.scrollTop)
     if (document.documentElement.scrollTop > 100) {
       dispatch(actionCreators.toggleTopShow(true));
     } else {
